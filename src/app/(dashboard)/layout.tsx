@@ -2,14 +2,11 @@ import Menu from "@/components/Menu";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import Link from "next/link";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
-export default function DashboardLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="h-screen flex">
+    <div className="flex">
       {/* LEFT SIDEBAR */}
       <div className="w-[14%] md:w-[8%] lg:w-[16%] xl:w-[14%] p-4">
         <Link
@@ -26,28 +23,28 @@ export default function DashboardLayout({
       <div className="w-[86%] md:w-[92%] lg:w-[84%] xl:w-[86%] bg-[#F7F8FA] flex flex-col min-h-screen">
         <Navbar />
 
-        {/* main content fills available height */}
-        <main className="flex-grow overflow-auto">{children}</main>
+        {/* main content grows to fill space */}
+        <main className="flex-grow">{children}</main>
 
-        {/* footer: light theme to match site */}
-        <footer className="bg-white border-t border-gray-200 py-4 text-center">
+        {/* footer */}
+        <footer className="bg-white border-t border-gray-200 py-4 text-center mt-4">
           <p className="font-medium text-gray-700 text-sm md:text-base">
             Mayank Jha
           </p>
-          <div className="space-x-4 text-sm">
+          <div className="space-x-4 text-sm flex justify-center items-center">
             <Link
               href="https://github.com/getMayankJha"
               target="_blank"
-              className="text-blue-600 hover:underline"
+              className="flex items-center gap-1 text-blue-600 hover:underline"
             >
-              GitHub
+              <FaGithub /> GitHub
             </Link>
             <Link
               href="https://www.linkedin.com/in/getmayankjha/"
               target="_blank"
-              className="text-blue-600 hover:underline"
+              className="flex items-center gap-1 text-blue-600 hover:underline"
             >
-              LinkedIn
+              <FaLinkedin /> LinkedIn
             </Link>
           </div>
         </footer>
