@@ -1,10 +1,10 @@
 {
-  "name": "dev-next-dashboard",
+  "name": "lama-dev-next-dashboard",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run prisma:generate && next build",
     "start": "next start",
     "lint": "next lint"
   },
