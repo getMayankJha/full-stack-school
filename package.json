@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "npm run prisma:generate && next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "npx prisma migrate deploy && next start",
+    "lint": "next lint",
+    "prisma:generate": "prisma generate"
   },
   "dependencies": {
     "@clerk/elements": "^0.14.6",
